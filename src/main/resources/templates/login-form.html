@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN PAGE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/login-form.css">
+</head>
+<body>
+<div class="login-wrapper">
+    <div class="login-container">
+        <h2>LOGIN</h2>
+
+        <form th:action="@{/login-submit}" method="post" id="loginForm">
+            <div class="input-group">
+                <label>Email</label>
+                <input type="email" name="email" id="email" placeholder="Email Address" required>
+            </div>
+            <span id="emailError" class="error-msg"></span>
+            <div class="input-group">
+                <label>Password</label>
+                <input type="password" name="password" id="password" placeholder="Enter Password" required>
+                <span class="toggle-password">👁️</span>
+            </div>
+            <span id="passError" class="error-msg"></span>
+
+            <div class="auth-options">
+                <a href="/signup-form?mode=forgot" class="forgot-link">Forgot Password?</a>
+                <span class="signup-text">don't have account? <a href="/signup-form">Sign Up</a></span>
+            </div>
+
+            <button type="submit" id="loginBtn" class="login-btn" disabled>Login</button>
+
+            <div class="separator">
+                <span>OR</span>
+            </div>
+
+            <button type="button" class="google-btn">
+                <img src="https://fonts.gstatic.com/s/i/productlogos/googleg/v6/24px.svg" alt="Google Logo">
+                <span>Sign in with Google</span>
+            </button>
+        </form>
+    </div>
+</div>
+
+<script src="/js/login-form.js"></script>
+</body>
+</html>
